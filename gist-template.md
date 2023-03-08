@@ -212,6 +212,18 @@ console.log(newStr2); // 'hello again world'
 
 ### Look-ahead and Look-behind
 
+Look-ahead and look-behind assertions are used to match a pattern only if it is followed or preceded by another pattern, without including the second pattern in the match result. Look-ahead assertions are denoted by `(?=...)`, where `...` is the pattern to look ahead for. Look-behind assertions are denoted by `(?<=...)`, where `...` is the pattern to look behind for.
+
+```
+// match a word that is followed by 'berry'
+const pattern1 = /\w+(?=berry)/;
+console.log(pattern1.exec('strawberry')); // ['straw']
+
+// match a word that is preceded by 'red'
+const pattern2 = /(?<=red )\w+/;
+console.log(pattern2.exec('red apple')); // ['apple']
+```
+
 ## Author
 
 Chris Lemmon, a junior web developer [@theLemmonade](https://github.com/theLemmonade).
