@@ -50,9 +50,53 @@ console.log(regex2.test("123-45-6789")); // true
 
 ### OR Operator
 
+The OR operator, denoted by the vertical bar |, matches one of two or more alternatives. It has the lowest precedence of all regex operators.
+
+```
+const regex = /cat|dog/;
+console.log(regex.test("cat")); // true
+console.log(regex.test("dog")); // true
+console.log(regex.test("bird")); // false
+```
+
 ### Character Classes
 
+Character classes are used to match a set of characters. They are enclosed in square brackets []. The most commonly used character classes are \d, \w, and \s. The backslash before the character specifies a special character class. For example, \d matches any digit from 0 to 9.
+
+```
+const regex = /[aeiou]/;
+console.log(regex.test("apple")); // true
+console.log(regex.test("banana")); // true
+console.log(regex.test("pear")); // false
+
+const regex2 = /\d{3}-\d{2}-\d{4}/;
+console.log(regex2.test("123-45-6789")); // true
+```
+
 ### Flags
+
+Flags are special options that modify the behavior of the pattern matching. They are represented as one or more characters placed after the closing delimiter of the regular expression. Flags can be used to perform case-insensitive matching, global matching, and multiline matching. The most commonly used flags in Python are re.IGNORECASE (for case-insensitive matching), re.MULTILINE (for multiline matching), and re.DOTALL (for matching any character, including newlines). Flags can be passed as the second argument to the re.compile() function or as a third argument to the re.search() or re.match() functions.
+
+```
+import re
+
+text = "The quick brown fox\nJumps over the lazy dog"
+
+# match all occurrences of the word "the" regardless of case
+pattern = re.compile(r"the", flags=re.IGNORECASE)
+matches = pattern.findall(text)
+print(matches)  # ['The', 'the']
+
+# match the start and end of each line in the text
+pattern = re.compile(r"^.*$", flags=re.MULTILINE)
+matches = pattern.findall(text)
+print(matches)  # ['The quick brown fox', 'Jumps over the lazy dog']
+
+# match any character, including newlines
+pattern = re.compile(r".*", flags=re.DOTALL)
+match = pattern.match(text)
+print(match.group(0))  # The quick brown fox\nJumps over the lazy dog
+```
 
 ### Grouping and Capturing
 
