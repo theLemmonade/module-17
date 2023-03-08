@@ -73,7 +73,7 @@ console.log(regex2.test("123-45-6789")); // true
 
 ### Flags
 
-Flags that modify the behavior of the pattern matching. The `g` flag enables global search, which finds all occurrences of the pattern in the string instead of just the first one. The `i` flag enables case-insensitive search, which matches both uppercase and lowercase characters. The `m` flag enables multiline search, which matches the pattern at the beginning or end of each line in a multiline string. The s flag enables dotall search, which matches any character including newline characters.
+Flags that modify the behavior of the pattern matching. The `g` flag enables global search, which finds all occurrences of the pattern in the string instead of just the first one. The `i` flag enables case-insensitive search, which matches both uppercase and lowercase characters. The `m` flag enables multiline search, which matches the pattern at the beginning or end of each line in a multiline string. The `s` flag enables dotall search, which matches any character including newline characters.
 
 ```
 // match all occurrences of a pattern with the 'g' flag
@@ -122,8 +122,6 @@ console.log(match[2]); // 'example.com'
 ### Bracket Expressions
 
 Bracket expressions (also known as character classes) to match any character from a specified set. Bracket expressions are enclosed in square brackets `[]` and can include any combination of characters, ranges, and predefined character classes. A range of characters can be specified using a hyphen `-` between the start and end characters. Predefined character classes represent common sets of characters, such as digits, alphabetic characters, and whitespace. The caret `^` can be used inside the bracket expression to match any character that is not in the set.
-
-Example:
 
 ```
 // match a string that starts with any vowel
